@@ -29,3 +29,11 @@ function typeEffect() {
 }
 
 typeEffect();
+
+// menu code for media queries
+const menuToggle = document.getElementById("menuToggle");
+const menu = document.querySelector(".ul2");
+
+menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});

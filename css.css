@@ -7,6 +7,7 @@ Deep Teal → #065F46
 * {
     margin: 0;
     padding: 0;
+      box-sizing: border-box;
     /* color: white; */
     color: darkgreen;
 }
@@ -54,7 +55,9 @@ nav h1 {
     align-items: center;
     /* center vertically */
 }
-
+.ul2 {
+    transition: all 0.3s ease;
+}
 /* home page css */
 .herocontent {
     display: flex;
@@ -137,6 +140,7 @@ nav h1 {
     width: 400px;
     height: 100px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
 }
@@ -224,4 +228,151 @@ nav h1 {
   50% {
     opacity: 0;
   }
+}
+/* media queries */
+/* Default (Desktop) */
+.ratingcard {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+    .ratingcard {
+        flex-wrap: wrap;   /* FIXED */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .ratingcard1 {
+        width: 100%;       /* full width on phone */
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .circle {
+        margin-left: 0;    /* center icon */
+    }
+}
+/* ========================= */
+/* 📱 MOBILE (<= 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .ul1, .ul2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .herocontent h1 {
+        font-size: 30px;
+    }
+
+    .herocontent h1:nth-child(2) {
+        font-size: 34px;
+    }
+
+    .herocontent p {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 150px;
+        height: 40px;
+    }
+
+    .rating h1 {
+        font-size: 35px;
+    }
+
+    .ratingcard {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .ratingcard1 {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .circle {
+        margin: 0 auto;
+    }
+
+    .ratingcard1 h3 {
+        margin-top: 10px;
+    }
+}
+
+/* ========================= */
+/* 📱 SMALL PHONES (<= 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+    .herocontent h1 {
+        font-size: 24px;
+    }
+
+    .herocontent h1:nth-child(2) {
+        font-size: 26px;
+    }
+
+    .btn {
+        width: 130px;
+        height: 38px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon {
+        font-size: 35px;
+    }
+}
+/* MENU ICON (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* ========================= */
+/* 📱 MOBILE VIEW */
+/* ========================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .ul1, .ul2 {
+        display: none;  /* hide menu */
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        margin-top: 10px;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    .ul1 li, .ul2 li {
+        padding: 12px;
+        text-align: center;
+    }
+
+    /* SHOW MENU WHEN ACTIVE */
+    .show {
+        display: flex;
+    }
 }
