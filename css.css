@@ -11,7 +11,9 @@ Deep Teal → #065F46
     /* color: white; */
     color: darkgreen;
 }
-
+a{
+    text-decoration: none;
+}
 .hero {
     height: 100vh;
     width: 100%;
@@ -26,7 +28,9 @@ nav {
     height: 10vh;
     background-color: rgba(255, 255, 255, 0.5);
 }
-
+nav h1, .ul1 li, .ul2 li {
+    pointer-events: none;
+}
 nav h1 {
     margin-left: 20px;
 }
@@ -167,7 +171,81 @@ nav h1 {
     margin: 20px 0px;
     margin-left: 30px;
 }
-/* 🎯 ICON CIRCLE (Updated Premium Style) */
+/* text image side div */
+.text_img{
+    /* width: 90%; */
+    /* height: 100%; */
+    display: flex;
+     align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 60px;
+
+}
+/* left div side */
+.lefttext{
+    width: 50%;
+}
+.lefttext h1{
+    width: 470px;
+    font-size: 59px;
+    color: #0B3D02;
+    text-transform: uppercase;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    margin: 30px 0px;
+}
+.textp{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e6f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 22px;
+    color:  #black;;
+}
+
+.feature h3 {
+    font-size: 25px;
+    font-weight: 600;
+    color:  #000000;;
+}
+
+.feature p {
+    font-size: 20px;
+    color: #454745;
+}
+/* right div side  */
+.rightimg{
+   
+      width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.rightimg img {
+    width: 100%;
+    max-width: 500px;  /* control size 🔥 */
+    height: auto;
+    border-radius: 20px;
+}
+
+/*  ICON CIRCLE (Updated Premium Style) */
 .circle {
     display: flex;
     justify-content: center;
@@ -375,5 +453,171 @@ nav h1 {
     /* SHOW MENU WHEN ACTIVE */
     .show {
         display: flex;
+    }
+}
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .right img {
+        max-width: 90%;
+    }
+}
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ========================= */
+/* 📱 TABLET + MOBILE (<= 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .ul1, .ul2 {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        margin-top: 10px;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    .ul1 li, .ul2 li {
+        padding: 12px;
+        text-align: center;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    /* HERO */
+    .herocontent h1 {
+        font-size: 30px;
+    }
+
+    .herocontent h1:nth-child(2) {
+        font-size: 34px;
+    }
+
+    .herocontent p {
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 150px;
+        height: 40px;
+    }
+
+    /* TEXT + IMAGE SECTION 🔥 */
+    .text_img {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .lefttext, .rightimg {
+        width: 100%;
+    }
+
+    .lefttext h1 {
+        width: 100%;
+        font-size: 32px;
+    }
+
+    .rightimg img {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+
+    /* FEATURES */
+    .feature {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* RATING SECTION */
+    .rating h1 {
+        font-size: 35px;
+    }
+
+    .ratingcard {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .ratingcard1 {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .circle {
+        margin: 0 auto;
+    }
+
+    .ratingcard1 h3 {
+        margin-top: 10px;
+    }
+}
+
+/* ========================= */
+/* 📱 SMALL PHONES (<= 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+    .herocontent h1 {
+        font-size: 24px;
+    }
+
+    .herocontent h1:nth-child(2) {
+        font-size: 26px;
+    }
+
+    .lefttext h1 {
+        font-size: 26px;
+    }
+
+    .btn {
+        width: 130px;
+        height: 38px;
+    }
+
+    .circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon {
+        font-size: 35px;
+    }
+
+    .feature h3 {
+        font-size: 20px;
+    }
+
+    .feature p {
+        font-size: 16px;
     }
 }
