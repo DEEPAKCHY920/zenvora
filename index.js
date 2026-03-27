@@ -134,3 +134,17 @@ to.addEventListener("change", convert);
 // ✅ Init
 loadCurrencies();
 convert();
+
+
+
+// =================================================================
+// toggle menu
+document.querySelector(".menu-toggle").onclick = () => {
+  document.querySelector(".navbar ul").classList.toggle("show");
+};
+
+// scroll effect
+window.addEventListener("scroll", () => {
+  document.querySelector("nav")
+    .classList.toggle("scrolled", window.scrollY > 50);
+});
