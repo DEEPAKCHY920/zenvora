@@ -20,6 +20,7 @@ Deep Teal → #065F46
 }
 
 nav {
+    cursor: pointer;
     display: flex;
     align-items: center;
     height: 10vh;
