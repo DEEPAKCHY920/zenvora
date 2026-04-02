@@ -20,7 +20,7 @@ function typeEffect() {
   if (!isDeleting && i === text.length) {
     currentSpeed = delay;
     isDeleting = true;
-  } 
+  }
   else if (isDeleting && i === 0) {
     isDeleting = false;
   }
@@ -35,7 +35,7 @@ const menuToggle = document.getElementById("menuToggle");
 const menu = document.querySelector(".ul2");
 
 menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("show");
+  menu.classList.toggle("show");
 });
 // ===================================================================================================================================================
 // CURRENCY CHANGE
@@ -46,7 +46,7 @@ const result = document.getElementById("result");
 const rate = document.getElementById("rate");
 const swap = document.getElementById("swap");
 
-const currencies = ["USD","INR","EUR","GBP","JPY","AUD","CAD"];
+const currencies = ["USD", "INR", "EUR", "GBP", "JPY", "AUD", "CAD"];
 
 // ✅ Fill dropdown (clear first to avoid duplicates)
 function loadCurrencies() {
