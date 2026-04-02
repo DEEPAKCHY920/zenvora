@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #8bdc65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glass Effect */
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.form-box {
+  max-width: 400px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 40px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.input-box i {
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+
+.toggle {
+  right: 10px;
+  left: auto;
+  cursor: pointer;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #4e8236;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #8af458;
+}
+
+/* Social */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons i {
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons i:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Text */
+.or {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.switch a {
+  color: #4e8236;
+  text-decoration: none;
+}
+
+/* 📱 Responsive */
+@media (max-width: 500px) {
+  .form-box {
+    padding: 25px;
+  }
+}
