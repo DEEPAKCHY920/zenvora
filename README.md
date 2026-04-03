@@ -1,6 +1,15 @@
 # 💸 Zenvora — Send Money Worldwide
 
+<div align="center">
 
+**A modern fintech web app for fast, transparent international money transfers.**
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-22c55e?style=for-the-badge)](https://deepakchy920.github.io/zenvora/)
+[![HTML](https://img.shields.io/badge/HTML-46%25-orange?style=for-the-badge&logo=html5)](https://github.com/DEEPAKCHY920/zenvora)
+[![CSS](https://img.shields.io/badge/CSS-45%25-blue?style=for-the-badge&logo=css3)](https://github.com/DEEPAKCHY920/zenvora)
+[![JavaScript](https://img.shields.io/badge/JavaScript-9%25-yellow?style=for-the-badge&logo=javascript)](https://github.com/DEEPAKCHY920/zenvora)
+
+</div>
 
 ---
 
