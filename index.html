@@ -113,14 +113,14 @@
         <div class="menu-toggle" id="menuToggle">☰</div>
         <ul class="ul1">
           <li><a href="#" class="active">Home</a></li>
-          <a href=""> <li>Personal</li></a>
-          <a href=""> <li>Business</li></a>
+          <a href="personal.html"> <li>Personal</li></a>
+          <a href="Business.html"> <li>Business</li></a>
           <a href=""> <li>Platform</li></a>
         </ul>
         <ul class="ul2">
           <li class="flag-icon flag-icon-in" style="font-size: 25px ;"></li>
           <span>India</span>
-          <a href=""><li>Help</li></a>
+          <a href="help.html"><li>Help</li></a>
           <a href="login.html"><li>Log in</li></a>
           <a href="signup.html"><li>Sign Up</li></a>
         </ul>
@@ -493,5 +493,220 @@
         "description": "Send money abroad with low fees and real exchange rates."
       }
     </script>
+    <!-- 🔥 ZENVORA FINTECH CHATBOT START -->
+
+<!-- Button -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+  <div class="header">Zenvora Support 💸</div>
+
+  <div id="messages" class="messages"></div>
+
+  <!-- Quick buttons -->
+  <div class="quick">
+    <button onclick="quickMsg('fees')">💰 Fees</button>
+    <button onclick="quickMsg('exchange rate')">💱 Rate</button>
+    <button onclick="quickMsg('transfer time')">⏱ Time</button>
+    <button onclick="quickMsg('verify account')">🪪 KYC</button>
+  </div>
+
+  <div id="typing" class="typing">🤖 typing...</div>
+
+  <div class="input-box">
+    <input id="msg" placeholder="Ask about transfers...">
+    <button onclick="send()">Send</button>
+  </div>
+</div>
+
+<style>
+.chat-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#22c55e;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.chatbox{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:330px;
+  background:white;
+  display:none;
+  flex-direction:column;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transform:translateY(40px);
+  opacity:0;
+  transition:0.3s;
+}
+
+.chatbox.active{
+  display:flex;
+  transform:translateY(0);
+  opacity:1;
+}
+
+.header{
+  background:#22c55e;
+  color:white;
+  padding:12px;
+  text-align:center;
+}
+
+.messages{
+  height:260px;
+  overflow-y:auto;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.msg{
+  padding:10px 14px;
+  border-radius:20px;
+  max-width:75%;
+}
+
+.user{
+  background:#22c55e;
+  color:white;
+  align-self:flex-end;
+}
+
+.bot{
+  background:#eee;
+  align-self:flex-start;
+}
+
+.typing{
+  font-size:12px;
+  padding:5px 10px;
+  color:gray;
+  display:none;
+}
+
+.quick{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  padding:5px;
+}
+
+.quick button{
+  border:none;
+  background:#eee;
+  padding:5px 10px;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.input-box{
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+button{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:10px;
+}
+</style>
+
+<script>
+function toggleChat(){
+  document.getElementById("chatbox").classList.toggle("active");
+}
+
+function addMessage(text, type){
+  let chat = document.getElementById("messages");
+
+  let div = document.createElement("div");
+  div.className = "msg " + type;
+  div.innerText = text;
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function showTyping(){
+  document.getElementById("typing").style.display="block";
+}
+function hideTyping(){
+  document.getElementById("typing").style.display="none";
+}
+
+function send(){
+  let input = document.getElementById("msg");
+  let text = input.value.trim();
+
+  if(!text) return;
+
+  addMessage(text, "user");
+  input.value="";
+
+  showTyping();
+
+  setTimeout(()=>{
+    hideTyping();
+    let reply = smartAI(text);
+    addMessage(reply, "bot");
+  },1000);
+}
+
+function quickMsg(text){
+  document.getElementById("msg").value = text;
+  send();
+}
+
+// 💸 FINTECH AI LOGIC
+function smartAI(input){
+  input = input.toLowerCase();
+
+  if(input.match(/hi|hello|hey/))
+    return "👋 Welcome to Zenvora! I help with transfers.";
+
+  if(input.includes("transfer"))
+    return "💸 Enter amount → Add recipient → Pay securely.";
+
+  if(input.includes("fee"))
+    return "💰 Transparent low fees shown before payment.";
+
+  if(input.includes("rate"))
+    return "💱 Real-time exchange rates with no hidden markup.";
+
+  if(input.includes("time"))
+    return "⏱ Transfers take minutes to 24 hours.";
+
+  if(input.includes("verify") || input.includes("kyc"))
+    return "🪪 Upload ID to verify your account.";
+
+  if(input.includes("failed"))
+    return "❌ Try another payment method or check details.";
+
+  if(input.includes("refund"))
+    return "🔁 Refunds are automatic if transfer fails.";
+
+  return "🤖 Ask me about fees, rates, or transfers.";
+}
+</script>
+
+<!-- 🔥 ZENVORA FINTECH CHATBOT END -->
   </body>
 </html>

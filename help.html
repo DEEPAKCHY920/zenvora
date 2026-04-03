@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenvora-Help Center</title>
+ <!-- SEO -->
+    <meta name="title" content="Zenvora - Send Money Abroad Easily" />
+    <meta
+      name="description"
+      content="Zenvora helps you send money abroad with real exchange rates, zero hidden fees, and fast global transfers."
+    />
+    <meta
+      name="keywords"
+      content="Zenvora, money transfer, send money abroad, fintech, international payments, exchange rate"
+    />
+    <meta name="author" content="Deepak Choudhary" />
+
+    <!-- ROBOTS -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- MOBILE UI -->
+    <meta name="theme-color" content="#10B981" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- FAVICON -->
+    <link rel="icon" href="favicon2.png" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon2.png" />
+    <!-- OPEN GRAPH (FACEBOOK / WHATSAPP) -->
+    <meta property="og:title" content="Zenvora - Smart Money Transfers" />
+    <meta
+      property="og:description"
+      content="Send money abroad with no hidden fees using Zenvora."
+    />
+    <meta
+      property="og:image"
+      content="https://deepakchy920.github.io/zenvora/preview.png"
+    />
+    <meta property="og:url" content="https://deepakchy920.github.io/zenvora/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zenvora" />
+
+    <!-- TWITTER (X) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zenvora - Send Money Abroad" />
+    <meta
+      name="twitter:description"
+      content="Fast, secure, and transparent money transfers worldwide."
+    />
+    <meta
+      name="twitter:image"
+      content="https://deepakchy920.github.io/zenvora/preview.png"
+    />
+
+    <!-- PERFORMANCE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SECURITY (basic) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #111;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.register-btn {
+  background: #8bdc65;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Search */
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  width: 50%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.suggestions {
+  position: absolute;
+  width: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 10px;
+  margin-top: 5px;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.suggestions div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #eee;
+}
+
+/* Buttons */
+.login-btn {
+  margin-top: 15px;
+  background: #8bdc65;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.trouble {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Topics */
+.topics {
+  padding: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #eee;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #e0e0e0;
+}
+
+/* Dark Mode */
+.dark {
+  background: #111;
+  color: white;
+}
+
+.dark .navbar,
+.dark .card,
+.dark .suggestions {
+  background: #222;
+  color: white;
+}
+
+.dark input {
+  background: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .search-box input,
+  .suggestions {
+    width: 80%;
+  }
+}
+
+@media(max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+.topics {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* 🔥 Card Design */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Glow gradient layer */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #6366f1, #06b6d4, #10b981);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Content above glow */
+.card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Icon */
+.card i {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #4f46e5;
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+/* Hover Effects 😈 */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Gradient glow appears */
+.card:hover::before {
+  opacity: 0.08;
+}
+
+/* Icon animation */
+.card:hover i {
+  transform: translateY(-5px) scale(1.2) rotate(5deg);
+  color: #06b6d4;
+}
+
+/* Text */
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">ZENVORA</div>
+
+  <div class="nav-right">
+    <span>🌐 EN</span>
+    <button class="register-btn"><a href="login.html">Login</a></button>
+    <button class="register-btn"><a href="signup.html">Register</a></button>
+    <button onclick="toggleDark()">🌙</button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Hi, how can we help?</h1>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search for articles">
+    <div class="suggestions" id="suggestions"></div>
+  </div>
+
+  <p style="margin-top:20px;">Log in for personalised support</p>
+  <button class="login-btn"> <a href="login.html">Log in</a></button>
+  <!-- <a href="" class="trouble">Trouble logging in?</a> -->
+</section>
+
+<!-- Topics -->
+<section class="topics">
+  <h2>Explore all topics</h2>
+
+  <div class="grid">
+    <div class="card">
+      <i class="fa-solid fa-paper-plane"></i>
+      <h3>Sending money</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-user"></i>
+      <h3>Managing account</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-lock"></i>
+      <h3>Holding money</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-credit-card"></i>
+      <h3>Zenvora card</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-download"></i>
+      <h3>Receiving money</h3>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-building"></i>
+      <h3>Zenvora Business</h3>
+    </div>
+  </div>
+</section>
+
+<script>
+// Search Suggestions
+const data = [
+  "Send money",
+  "Receive money",
+  "Account verification",
+  "Reset password",
+  "Card issues",
+  "Business account"
+];
+
+const input = document.getElementById("search");
+const suggestions = document.getElementById("suggestions");
+
+input.addEventListener("input", () => {
+  let value = input.value.toLowerCase();
+  suggestions.innerHTML = "";
+
+  if (value === "") {
+    suggestions.style.display = "none";
+    return;
+  }
+
+  let filtered = data.filter(item => item.toLowerCase().includes(value));
+
+  filtered.forEach(item => {
+    let div = document.createElement("div");
+    div.textContent = item;
+    div.onclick = () => {
+      input.value = item;
+      suggestions.style.display = "none";
+    };
+    suggestions.appendChild(div);
+  });
+
+  suggestions.style.display = "block";
+});
+
+
+// Dark Mode Toggle
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card, i) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(30px)";
+
+  setTimeout(() => {
+    card.style.transition = "all 0.6s ease";
+    card.style.opacity = "1";
+    card.style.transform = "translateY(0)";
+  }, i * 100);
+});
+</script>
+<!-- 🔥 ZENVORA FINTECH CHATBOT START -->
+
+<!-- Button -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+  <div class="header">Zenvora Support 💸</div>
+
+  <div id="messages" class="messages"></div>
+
+  <!-- Quick buttons -->
+  <div class="quick">
+    <button onclick="quickMsg('fees')">💰 Fees</button>
+    <button onclick="quickMsg('exchange rate')">💱 Rate</button>
+    <button onclick="quickMsg('transfer time')">⏱ Time</button>
+    <button onclick="quickMsg('verify account')">🪪 KYC</button>
+  </div>
+
+  <div id="typing" class="typing">🤖 typing...</div>
+
+  <div class="input-box">
+    <input id="msg" placeholder="Ask about transfers...">
+    <button onclick="send()">Send</button>
+  </div>
+</div>
+
+<style>
+.chat-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#22c55e;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.chatbox{
+  position:fixed;
+  bottom:80px;
+  right:20px;
+  width:330px;
+  background:white;
+  display:none;
+  flex-direction:column;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  transform:translateY(40px);
+  opacity:0;
+  transition:0.3s;
+}
+
+.chatbox.active{
+  display:flex;
+  transform:translateY(0);
+  opacity:1;
+}
+
+.header{
+  background:#22c55e;
+  color:white;
+  padding:12px;
+  text-align:center;
+}
+
+.messages{
+  height:260px;
+  overflow-y:auto;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.msg{
+  padding:10px 14px;
+  border-radius:20px;
+  max-width:75%;
+}
+
+.user{
+  background:#22c55e;
+  color:white;
+  align-self:flex-end;
+}
+
+.bot{
+  background:#eee;
+  align-self:flex-start;
+}
+
+.typing{
+  font-size:12px;
+  padding:5px 10px;
+  color:gray;
+  display:none;
+}
+
+.quick{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  padding:5px;
+}
+
+.quick button{
+  border:none;
+  background:#eee;
+  padding:5px 10px;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.input-box{
+  display:flex;
+  border-top:1px solid #ddd;
+}
+
+input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+
+button{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:10px;
+}
+</style>
+
+<script>
+function toggleChat(){
+  document.getElementById("chatbox").classList.toggle("active");
+}
+
+function addMessage(text, type){
+  let chat = document.getElementById("messages");
+
+  let div = document.createElement("div");
+  div.className = "msg " + type;
+  div.innerText = text;
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function showTyping(){
+  document.getElementById("typing").style.display="block";
+}
+function hideTyping(){
+  document.getElementById("typing").style.display="none";
+}
+
+function send(){
+  let input = document.getElementById("msg");
+  let text = input.value.trim();
+
+  if(!text) return;
+
+  addMessage(text, "user");
+  input.value="";
+
+  showTyping();
+
+  setTimeout(()=>{
+    hideTyping();
+    let reply = smartAI(text);
+    addMessage(reply, "bot");
+  },1000);
+}
+
+function quickMsg(text){
+  document.getElementById("msg").value = text;
+  send();
+}
+
+// 💸 FINTECH AI LOGIC
+function smartAI(input){
+  input = input.toLowerCase();
+
+  if(input.match(/hi|hello|hey/))
+    return "👋 Welcome to Zenvora! I help with transfers.";
+
+  if(input.includes("transfer"))
+    return "💸 Enter amount → Add recipient → Pay securely.";
+
+  if(input.includes("fee"))
+    return "💰 Transparent low fees shown before payment.";
+
+  if(input.includes("rate"))
+    return "💱 Real-time exchange rates with no hidden markup.";
+
+  if(input.includes("time"))
+    return "⏱ Transfers take minutes to 24 hours.";
+
+  if(input.includes("verify") || input.includes("kyc"))
+    return "🪪 Upload ID to verify your account.";
+
+  if(input.includes("failed"))
+    return "❌ Try another payment method or check details.";
+
+  if(input.includes("refund"))
+    return "🔁 Refunds are automatic if transfer fails.";
+
+  return "🤖 Ask me about fees, rates, or transfers.";
+}
+</script>
+
+<!-- 🔥 ZENVORA FINTECH CHATBOT END -->
+
+</body>
+</html>
